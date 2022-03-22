@@ -16,308 +16,248 @@ class _TarifState extends State<Tarif> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
-        title: Center(
-          child: Text('Тарифы',
-            style: TextStyle(
-                fontSize: 20, color: Color(0xff444444), fontWeight: FontWeight.bold
-            ),
-
-          ),
-        ), leading: IconButton(onPressed: (){
-        Navigator.push(context,
-            MaterialPageRoute(builder: (context) => Profile()));
-      }, icon: Icon(FontAwesomeIcons.arrowLeft , color: Color(0xff444444),),
+        title: Text(
+          'Тарифы',
+          style: TextStyle(
+              fontSize: 16,
+              color: Color(0xff444444),
+              fontWeight: FontWeight.w600),
+        ),
+        centerTitle: true,
+        iconTheme: IconThemeData(color: Color(0xFF444444)),
       ),
-      ),
-
       body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.only(left: 15, top: 20, right: 15,),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-''''Lorem ipsum dolor sit amet, consectetur adipiscing
-elit. Dolor, amet in interdum leo. Tortor dui sit viverra
-fames turpis semper est, tortor. Habitant interdum interdum
-tortor, et lectus sollicitudin sit lectus nunc.
-Vel ornare netus donec at id quam nulla. '''),
-              SizedBox(height: 30,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(left: 15.0,right: 15,top: 20),
+              child: Column(
                 children: [
-                  GestureDetector(
-                    onTap: (){},
-                    child: Container(
-                      width: 180,
-                      height: 60,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(8),
-                        color: Color(0xffFFB951)
+                  Text(
+                      '''Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor, amet in interdum leo. Tortor dui sit viverra fames turpis semper est, tortor. Habitant interdum interdum tortor, et lectus sollicitudin sit lectus nunc. Vel ornare netus donec at id quam nulla.'''),
+                  SizedBox(height: 30),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      GestureDetector(
+                        onTap: () {},
+                        child: Container(
+                          width: 150,
+                          height: 60,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(8),
+                              color: Color(0xffFFB951)),
+                          child: Center(
+                            child: Text('Все тарифы'),
+                          ),
+                        ),
                       ),
-                      child: Center(
-                        child: Text('Все тарифы'),
+                      GestureDetector(
+                        onTap: () {},
+                        child: Container(
+                          width: 150,
+                          height: 60,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(8),
+                              color: Color(0xffEFEFEF)),
+                          child: Center(
+                            child: Text('Быстрая доставка'),
+                          ),
+                        ),
                       ),
-                    ),
+                    ],
                   ),
-                  GestureDetector(
-                    onTap: (){},
-                    child: Container(
-                      width: 180,
-                      height: 60,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(8),
-                          color: Color(0xffEFEFEF)
-                      ),
-                      child: Center(
-                        child: Text('Быстрая доставка'),
-                      ),
-                    ),
-                  ),
-
-
                 ],
               ),
-              Container(
-                width: 400,
-                height: 1150,
-                color: Colors.white,
-                child: Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(top: 20, left: 20, right: 20),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-''' Название и география 
-доставка '''),
-                          Text(
-                              ''' Вес груза и срок
-доставка ''')
-                        ],
+            ),
+            Container(
+              padding: EdgeInsets.all(20),
+              color: Colors.white,
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        width:140,
+                          child: Text(
+                        '''Название и география доставка ''',
+                        style: TextStyle(fontSize: 12),
+                      )),
+                      Container(
+                        width: 140,
+                        child: Text(
+                          '''Вес груза и срок доставка ''',
+                          style: TextStyle(fontSize: 12),
+                        ),
+                      )
+                    ],
+                  ),
+                  Divider(
+                    color: Color(0xFF808080),
+                    indent: 5,
+                    endIndent: 5,
+                    height: 40,
+                    thickness: 1,
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        width:150,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Посылочка',
+                              style: TextStyle(fontSize: 16,fontWeight: FontWeight.w700),
+                            ),
+                            Text('''Экономичная наземная доставка для частных лиц'''),
+                            Text('''Кыргызстан, Казахстан, Россия, Беларусь ''')
+                          ],
+                        ),
                       ),
-                    ),
-                    Divider(color: Colors.black,
-                      indent: 5,
-                      endIndent: 5,
-                      height: 40,
-                      thickness: 1,
-                    ),
-                    Row(
-                      children: [
-                        Column(
+                    ],
+                  ),
+                  Divider(
+                    color: Colors.black12,
+                    indent: 5,
+                    endIndent: 5,
+                    height: 40,
+                    thickness: 1,
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        width:150,
+                        child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Padding(
-                              padding: const EdgeInsets.only(top: 15,left: 20),
-                              child: Text('Посылочка', style: TextStyle(fontSize: 18),
-                              ),
+                            Text(
+                              'Экспресс-лайт',
+                              style: TextStyle(fontSize: 16,fontWeight: FontWeight.w700),
                             ),
-                            Padding(
-                              padding: const EdgeInsets.only(top: 15, left: 20),
-                              child: Text(
-'''Экономичная наземная
-доставка для частных лиц'''),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(top: 15, left: 20),
-                              child: Text(
- '''Кыргызстан, Казахстан,
- Россия, Беларусь '''),
-                            )
+                            Text('''Экономичная наземная доставка для частных лиц'''),
+                            Text('''Кыргызстан, Казахстан, Россия, Беларусь ''')
                           ],
                         ),
-
-                      ],
-                    ),
-                    Divider(color: Colors.black12,
-                      indent: 5,
-                      endIndent: 5,
-                      height: 40,
-                      thickness: 1,
-                    ),
-
-                    Row(
-                      children: [
-                        Column(
+                      ),
+                    ],
+                  ),
+                  Divider(
+                    color: Colors.black12,
+                    indent: 5,
+                    endIndent: 5,
+                    height: 40,
+                    thickness: 1,
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        width:150,
+                        child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Padding(
-                              padding: const EdgeInsets.only(top: 15,left: 20),
-                              child: Text('Экспресс-лайт', style: TextStyle(fontSize: 18),
-                              ),
+                            Text(
+                              'Супер экспресс',
+                              style: TextStyle(fontSize: 16,fontWeight: FontWeight.w700),
                             ),
-                            Padding(
-                              padding: const EdgeInsets.only(top: 15, left: 20),
-                              child: Text(
-                                  '''Экономичная наземная
-доставка для частных лиц'''),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(top: 15, left: 20),
-                              child: Text(
-                                  '''Кыргызстан, Казахстан,
- Россия, Беларусь '''),
-                            )
+                            Text('''Экономичная наземная доставка для частных лиц'''),
+                            Text('''Кыргызстан, Казахстан, Россия, Беларусь ''')
                           ],
                         ),
-
-                      ],
-                    ),
-                    Divider(color: Colors.black12,
-                      indent: 5,
-                      endIndent: 5,
-                      height: 40,
-                      thickness: 1,
-                    ),
-
-                    Row(
-                      children: [
-                        Column(
+                      ),
+                    ],
+                  ),
+                  Divider(
+                    color: Colors.black12,
+                    indent: 5,
+                    endIndent: 5,
+                    height: 40,
+                    thickness: 1,
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        width:150,
+                        child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Padding(
-                              padding: const EdgeInsets.only(top: 15,left: 20),
-                              child: Text('Супер экспресс', style: TextStyle(fontSize: 18),
-                              ),
+                            Text(
+                              'Экспресс-тяжеловес',
+                              style: TextStyle(fontSize: 16,fontWeight: FontWeight.w700),
                             ),
-                            Padding(
-                              padding: const EdgeInsets.only(top: 15, left: 20),
-                              child: Text(
-                                  '''Экономичная наземная
-доставка для частных лиц'''),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(top: 15, left: 20),
-                              child: Text(
-                                  '''Кыргызстан, Казахстан,
- Россия, Беларусь '''),
-                            )
+                            Text('''Экономичная наземная доставка для частных лиц'''),
+                            Text('''Кыргызстан, Казахстан, Россия, Беларусь ''')
                           ],
                         ),
-
-                      ],
-                    ),
-                    Divider(color: Colors.black12,
-                      indent: 5,
-                      endIndent: 5,
-                      height: 40,
-                      thickness: 1,
-                    ),
-
-                    Row(
-                      children: [
-                        Column(
+                      ),
+                    ],
+                  ),
+                  Divider(
+                    color: Colors.black12,
+                    indent: 5,
+                    endIndent: 5,
+                    height: 40,
+                    thickness: 1,
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        width:150,
+                        child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Padding(
-                              padding: const EdgeInsets.only(top: 15,left: 20),
-                              child: Text('Экспресс-тяжеловес', style: TextStyle(fontSize: 18),
-                              ),
+                            Text(
+                              'Магистральный экспресс',
+                              style: TextStyle(fontSize: 16,fontWeight: FontWeight.w700),
                             ),
-                            Padding(
-                              padding: const EdgeInsets.only(top: 15, left: 20),
-                              child: Text(
-                                  '''Экономичная наземная
-доставка для частных лиц'''),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(top: 15, left: 20),
-                              child: Text(
-                                  '''Кыргызстан, Казахстан,
- Россия, Беларусь '''),
-                            )
+                            Text('''Экономичная наземная доставка для частных лиц'''),
+                            Text('''Кыргызстан, Казахстан, Россия, Беларусь ''')
                           ],
                         ),
-
-                      ],
-                    ),
-                    Divider(color: Colors.black12,
-                      indent: 5,
-                      endIndent: 5,
-                      height: 40,
-                      thickness: 1,
-                    ),
-
-                    Row(
-                      children: [
-                        Column(
+                      ),
+                    ],
+                  ),
+                  Divider(
+                    color: Colors.black12,
+                    indent: 5,
+                    endIndent: 5,
+                    height: 40,
+                    thickness: 1,
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        width:150,
+                        child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Padding(
-                              padding: const EdgeInsets.only(top: 15,left: 20),
-                              child: Text('Магистральный экспресс', style: TextStyle(fontSize: 18),
-                              ),
+                            Text(
+                              'Международный экспресс документы',
+                              style: TextStyle(fontSize: 16,fontWeight: FontWeight.w700),
                             ),
-                            Padding(
-                              padding: const EdgeInsets.only(top: 15, left: 20),
-                              child: Text(
-                                  '''Экономичная наземная
-доставка для частных лиц'''),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(top: 15, left: 20),
-                              child: Text(
-                                  '''Кыргызстан, Казахстан,
- Россия, Беларусь '''),
-                            )
+                            Text('''Экономичная наземная доставка для частных лиц'''),
+                            Text('''Кыргызстан, Казахстан, Россия, Беларусь ''')
                           ],
                         ),
-
-                      ],
-                    ),
-                    Divider(color: Colors.black12,
-                      indent: 5,
-                      endIndent: 5,
-                      height: 40,
-                      thickness: 1,
-                    ),
-
-                    Row(
-                      children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.only(top: 15,left: 20),
-                              child: Text('Международный экспресс документы', style: TextStyle(fontSize: 18),
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(top: 15, left: 20),
-                              child: Text(
-                                  '''Экономичная наземная
-доставка для частных лиц'''),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(top: 15, left: 20),
-                              child: Text(
-                                  '''Кыргызстан, Казахстан,
- Россия, Беларусь '''),
-                            )
-                          ],
-                        ),
-
-                      ],
-                    ),
-                    Divider(color: Colors.black12,
-                      indent: 5,
-                      endIndent: 5,
-                      height: 40,
-                      thickness: 1,
-                    ),
-                  ],
-                ),
+                      ),
+                    ],
+                  ),
+                  Divider(
+                    color: Colors.black12,
+                    indent: 5,
+                    endIndent: 5,
+                    height: 40,
+                    thickness: 1,
+                  ),
+                ],
               ),
-                  ],
-                ),
-              ),
-
-
-
-          ),
-        );
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }

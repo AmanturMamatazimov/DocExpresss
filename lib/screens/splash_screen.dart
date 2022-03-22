@@ -22,31 +22,23 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Scaffold(
-        body:
+    return Scaffold(
+      body:
+      Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
 
-        Container(
-          width: double.infinity,
-          height: double.infinity,
-          child: Column(
-            children: [
-              SizedBox(height: 230,),
-              Center(
-                child: (
-                    Image.asset(
-                  'assets/doc.jpg',
-                  height: 171.0,
-                  width: 72.0
-                    )
-
+            SizedBox(),
+                Image.asset(
+              'assets/doc.png',
+              height: 72.0,
+              width: 171.0
                 ),
-      ),
-              SizedBox(height: 230,),
-              Text('Добро пожаловать в Doce ',style: TextStyle(fontSize: 16),),
-              SizedBox(height: 161),
-            ],
-          ),
+
+            Text('Добро пожаловать в Doce ',style: TextStyle(fontSize: 16),),
+          ],
         ),
       ),
     );

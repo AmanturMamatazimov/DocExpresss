@@ -15,17 +15,14 @@ class _ContactState extends State<Contact> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
+        iconTheme: IconThemeData(color: Color(0xFF444444)),
         backgroundColor: Colors.white,
         title: Text('Контакты',
           style: TextStyle(
-              fontSize: 20, color: Color(0xff444444), fontWeight: FontWeight.bold
+              fontSize: 16, color: Color(0xff444444), fontWeight: FontWeight.w600
           ),
-
-        ), leading: IconButton(onPressed: (){
-        Navigator.push(context,
-            MaterialPageRoute(builder: (context) => Profile()));
-      }, icon: Icon(FontAwesomeIcons.arrowLeft , color: Color(0xff444444),),
-      ),
+        ),
       ),
 
       body: SingleChildScrollView(
@@ -34,12 +31,8 @@ class _ContactState extends State<Contact> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-'''Позвоните нам! Специлисты вас
-проконультируют и помогут с отправкой вашего
-груза'''
-                ),
-   SizedBox(height: 25,),
+              Text('''Позвоните нам! Специлисты вас проконультируют и помогут с отправкой вашего груза'''),
+   SizedBox(height: 25),
    Text(
 'НОМЕРА ДЛЯ СВЯЗИ', style: TextStyle(fontSize: 20),),
               SizedBox(height: 20,),
@@ -48,7 +41,7 @@ Text(
 Text('+996(700) 18 00 33',style: TextStyle(fontSize: 26),),
 Text('+996(777) 18 00 33',style: TextStyle(fontSize: 26),),
 
-              SizedBox(height: 20,),
+              SizedBox(height: 20),
 
               Row(
 
@@ -112,7 +105,7 @@ Text('+996(777) 18 00 33',style: TextStyle(fontSize: 26),),
                height: 385,
                decoration: BoxDecoration(
                  borderRadius: BorderRadius.circular(15),
-                 color: Colors.black12,
+                 color: Colors.white,
                ),
                child: Column(
                  crossAxisAlignment: CrossAxisAlignment.start,
@@ -171,7 +164,7 @@ SizedBox(height: 20,),
                 height: 385,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
-                  color: Colors.black12,
+                  color: Colors.white,
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -230,7 +223,7 @@ SizedBox(height: 20,),
                 height: 385,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
-                  color: Colors.black12,
+                  color: Colors.white,
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -289,7 +282,7 @@ SizedBox(height: 20,),
                 height: 385,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
-                  color: Colors.black12,
+                  color: Colors.white,
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -348,7 +341,7 @@ SizedBox(height: 20,),
                 height: 420,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
-                  color: Colors.black12,
+                  color: Colors.white,
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,

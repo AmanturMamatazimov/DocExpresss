@@ -46,7 +46,8 @@ class _MainScreenState extends State<MainScreen> {
 
       bottomNavigationBar: NavigationBarTheme(
         data: NavigationBarThemeData(
-          indicatorColor: Color(0xffFFB951)
+          backgroundColor: Colors.white,
+          indicatorColor: Colors.white
         ),
       child: NavigationBar(
         selectedIndex: index,
@@ -55,16 +56,16 @@ class _MainScreenState extends State<MainScreen> {
 
         destinations: [
           NavigationDestination(
-            icon: Icon(Icons.home,),
+            icon: Icon(Icons.home,color: index==0?Color(0xFFFFB951):Color(0xFF1C1C1C)),
             label:  'Главная',),
           NavigationDestination(
-            icon:Icon(Icons.calculate,),
+            icon:Icon(Icons.calculate,color: index==1?Color(0xFFFFB951):Color(0xFF1C1C1C)),
             label:  'Калькулятор',),
           NavigationDestination(
-            icon:Icon(Icons.search,),
+            icon:Icon(Icons.search,color: index==2?Color(0xFFFFB951):Color(0xFF1C1C1C)),
             label:  'Отследить',),
           NavigationDestination(
-            icon:Icon(Icons.person,),
+            icon:Icon(Icons.person,color: index==3?Color(0xFFFFB951):Color(0xFF1C1C1C)),
             label:  'Профиль',),
         ],
       )

@@ -12,32 +12,24 @@ class PasswordScreen extends StatefulWidget {
 }
 
 class _PasswordScreenState extends State<PasswordScreen> {
-
   final _formKey = GlobalKey<FormState>();
   final TextEditingController passwordController = new TextEditingController();
-
 
   @override
   Widget build(BuildContext context) {
     final passwordField = TextFormField(
       autofocus: false,
       controller: passwordController,
-      keyboardType: TextInputType.emailAddress,
-      onSaved: (value)
-      {
+      keyboardType: TextInputType.phone,
+      onSaved: (value) {
         passwordController.text = value!;
       },
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
-          contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
+          // contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
           hintText: 'Номер телефона',
-          border:  OutlineInputBorder(
-              borderRadius: BorderRadius.circular(15)
-          )
-      ),
+          border: InputBorder.none),
     );
-
-
 
     final loginButton = Material(
       elevation: 5,
@@ -47,87 +39,116 @@ class _PasswordScreenState extends State<PasswordScreen> {
         padding: EdgeInsets.fromLTRB(20, 15, 20, 15),
         minWidth: MediaQuery.of(context).size.width,
         onPressed: () {
-          Navigator.push(context,
-              MaterialPageRoute(builder: (context) => LinkScreen()));
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => LinkScreen()));
         },
-        child: Text('Восстановить пароль',
+        child: Text(
+          'Восстановить пароль',
           textAlign: TextAlign.center,
           style: TextStyle(
-              fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold
-          ),
+              fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),
         ),
       ),
-
     );
 
-    return   Scaffold(
+    return Scaffold(
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
-        child: Center(
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Container(
-              color: Colors.white,
-              child: Form(
-                key: _formKey,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    SizedBox(height: 100),
-                    SizedBox(height: 100,
-                      child: Image.asset('assets/doc.jpg',
-                        fit: BoxFit.contain,),),
-                    SizedBox(height: 50),
-                    Text('Востоновление пароля'),
-                    SizedBox(height: 45),
-                    Text('''Для восстановления пароля, введите ваш номер
-телефона, на которую будет выслана ссылка для
-завершения восстановления доступа'''),
-                    SizedBox(height: 20),
-                    passwordField, SizedBox(height: 15),
-
-                    loginButton,SizedBox(height: 80),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Text('У вас есть аккаунт?  '),
-                        GestureDetector(onTap: (){
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (context) => LoginScreen()));
-                        },
-                          child: Text('Войти', style: TextStyle(
-                              color: Color(0xffFFB951),
-                              fontWeight:
-                              FontWeight.w600, fontSize: 15),
-
-                          ),)
-                      ],
+        padding: EdgeInsets.symmetric(horizontal: 15),
+        child: Container(
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              SizedBox(),
+              Column(
+                children: [
+                  Image.asset(
+                    'assets/doc.png',
+                    fit: BoxFit.contain,
+                    width: 144,
+                    height: 58,
+                  ),
+                  SizedBox(height: 50),
+                  Text('Восстановление пароля',style: TextStyle(
+                    color: Color(0xFF444444),
+                    fontWeight: FontWeight.w600,
+                    fontSize: 18
+                  ),),
+                  SizedBox(height: 45),
+                  Text(
+                    '''Для восстановления пароля, введите ваш номер телефона, на которую будет выслана ссылка для завершения восстановления доступа''',
+                    textAlign: TextAlign.justify,
+                  ),
+                  SizedBox(height: 20),
+                  Container(
+                    padding: EdgeInsets.only(left: 20),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8),
+                      color: Color(0xFFEDEDEF),
                     ),
-                    SizedBox(height: 30),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Text('У вас нету аккаунта? '),
-                        GestureDetector(onTap: (){
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (context) => RagistrationScreen()));
-                        },
-                          child: Text('Зарегистрироваться', style: TextStyle(
-                              color: Color(0xffFFB951),
-                              fontWeight:
-                              FontWeight.w600, fontSize: 15),
-
-                          ),)
-                      ],
-                    )
-                  ],
-                ),
+                    child: passwordField,
+                  ),
+                  SizedBox(height: 15),
+                  loginButton,
+                ],
               ),
-            ),
+              // SizedBox(height: 80),
+              Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Text('У вас есть аккаунт?  '),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => LoginScreen()));
+                        },
+                        child: Text(
+                          'Войти',
+                          style: TextStyle(
+                              color: Color(0xffFFB951),
+                              fontWeight: FontWeight.w600,
+                              fontSize: 15),
+                        ),
+                      )
+                    ],
+                  ),
+                  SizedBox(height: 30),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Text('У вас нету аккаунта? '),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      RagistrationScreen()));
+                        },
+                        child: Text(
+                          'Зарегистрироваться',
+                          style: TextStyle(
+                              color: Color(0xffFFB951),
+                              fontWeight: FontWeight.w600,
+                              fontSize: 15),
+                        ),
+                      )
+                    ],
+                  ),
+                ],
+              ),
+              SizedBox(),
+            ],
           ),
         ),
       ),
-    ) ;
+    );
   }
 }

@@ -16,19 +16,15 @@ class _LogOutState extends State<LogOut> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffE5E5E5),
+      backgroundColor: Color(0xffF7F6F6),
       appBar: AppBar(
         backgroundColor: Colors.white,
+        centerTitle: true,
         title: Text('Мой профиль',
           style: TextStyle(
-              fontSize: 20, color: Color(0xff444444), fontWeight: FontWeight.bold
+              fontSize: 16, color: Color(0xff444444), fontWeight: FontWeight.w600
           ),
-
-        ), leading: IconButton(onPressed: (){
-        Navigator.push(context,
-            MaterialPageRoute(builder: (context) => MyProfile()));
-      }, icon: Icon(FontAwesomeIcons.arrowLeft , color: Color(0xff444444),),
-      ),
+        ),
       ),
 
       body: Center(
@@ -57,9 +53,7 @@ class _LogOutState extends State<LogOut> {
                 ),
               ),
                SizedBox(height: 10,),
-               Text('''
-Вы действительно 
-  хотите выйти?'''),
+               Text('''Вы действительно хотите выйти?'''),
               SizedBox(height: 15,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -72,8 +66,7 @@ class _LogOutState extends State<LogOut> {
                       minWidth: 155,
                       height: 50,
                       onPressed: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => Profile()));
+                        Navigator.pop(context);
                       },
                       child: Text('Назад',
                         textAlign: TextAlign.center,
@@ -92,9 +85,9 @@ class _LogOutState extends State<LogOut> {
                   height: 50,
                   onPressed: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Afto()));
+                        MaterialPageRoute(builder: (context) => LoginScreen()));
                   },
-                  child: Text('Войти',
+                  child: Text('Выйти',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                         fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold

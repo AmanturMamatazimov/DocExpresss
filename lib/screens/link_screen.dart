@@ -13,39 +13,42 @@ class _LinkScreenState extends State<LinkScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
 
-      body:Center(
-        child: Container(
-            width: 345,
-            height: 205,
-            decoration: BoxDecoration(
-              color:
-                Colors.white, borderRadius: BorderRadius.circular(10),
-              border: Border.all(color: Colors.black12)
+      body:Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 15.0),
+        child: Center(
+          child: Container(
+              width: 345,
+              height: 205,
+              decoration: BoxDecoration(
+                color:
+                  Colors.white, borderRadius: BorderRadius.circular(10),
+                border: Border.all(color: Colors.black12)
 
-            ),
-            child: Column(
-              children:<Widget>[
-                SizedBox(height: 25),
-                Icon(Icons.perm_contact_calendar_sharp,
-                size: 40,
-                color:   Color(0xffFFB951),),
-                SizedBox(height: 10),
-                Text('''Ссылка успешно отправлена
+              ),
+              child: Column(
+                children:<Widget>[
+                  SizedBox(height: 25),
+                  Icon(Icons.perm_contact_calendar_sharp,
+                  size: 40,
+                  color:   Color(0xffFFB951),),
+                  SizedBox(height: 10),
+                  Text('''Ссылка успешно отправлена
   на ваш номер телефона''',
-                  style: TextStyle(
-                      fontSize: 20
+                    style: TextStyle(
+                        fontSize: 20
+                    ),
                   ),
-                ),
-                SizedBox(height: 15),
-                Text('''Если сообщение не пришло, можете 
+                  SizedBox(height: 15),
+                  Text('''Если сообщение не пришло, можете 
  попробовать ещё через 5 минут''',style: TextStyle(
-                    fontSize: 14
-                ),),
+                      fontSize: 14
+                  ),),
 
-                ]
-            )
+                  ]
+              )
+              ),
             ),
-          ),
+      ),
           );
   }
 }

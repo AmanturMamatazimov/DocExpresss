@@ -12,12 +12,13 @@ class _ConScreenState extends State<ConScreen> {
   @override
   Widget build(BuildContext context) {
     final loginButton = Material(
-      elevation: 5,
+
+      elevation: 0,
       borderRadius: BorderRadius.circular(15),
       color: Color(0xffFFB951),
       child: MaterialButton(
-        padding: EdgeInsets.fromLTRB(20, 15, 20, 15),
-        minWidth: MediaQuery.of(context).size.width,
+        padding: EdgeInsets.fromLTRB(15, 15, 15, 15),
+        // minWidth: MediaQuery.of(context).size.width,
         onPressed: () {
           Navigator.push(context,
               MaterialPageRoute(builder: (context) => MainScreen()));
@@ -25,7 +26,7 @@ class _ConScreenState extends State<ConScreen> {
         child: Text('Отправить первую посылку',
           textAlign: TextAlign.center,
           style: TextStyle(
-              fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold
+              fontSize: 18, color: Colors.white, fontWeight: FontWeight.bold
           ),
         ),
       ),
@@ -34,37 +35,34 @@ class _ConScreenState extends State<ConScreen> {
 
     return Scaffold(
       backgroundColor: Colors.white,
-      body: SingleChildScrollView(
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 15.0),
         child: Center(
-          child: Container(
-            color: Colors.white,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: <Widget>[
-                  SizedBox(height: 100),
-                  SizedBox(height: 100,
-                    child: Image.asset('assets/doc.jpg',
-                      fit: BoxFit.contain,),),
-                  SizedBox(height: 97),
-                  Icon(Icons.where_to_vote_rounded,
-                  size: 42,
-                    color: Color(0xffFFB951),
-                  ),
-
-                  SizedBox(height: 22),
-              Text('''Поздравляем!
-Регистрация завершена'''),
-                  SizedBox(height: 45),
-
-                  loginButton
-
-                ],
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              Image.asset('assets/doc.png',
+                fit: BoxFit.contain,
+                width: 144,
+                height: 58,
               ),
-            ),
+              SizedBox(height: 97),
+              Icon(Icons.where_to_vote_rounded,
+              size: 42,
+                color: Color(0xffFFB951),
+              ),
+
+              SizedBox(height: 22),
+          Text('''Поздравляем!'''),
+              Text('Регистрация завершена'),
+              SizedBox(height: 45),
+
+              loginButton
+
+            ],
           ),
-
-
+        ),
       ),
     );
 

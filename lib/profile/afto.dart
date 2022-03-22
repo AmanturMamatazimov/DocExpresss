@@ -26,7 +26,7 @@ class _AftoState extends State<Afto> {
           height: 22,
           child: Padding(
             padding: const EdgeInsets.only(left: 15),
-            child: Image.asset('assets/doc.jpg'),
+            child: Image.asset('assets/doc.png'),
           ),
         ),
       ),
